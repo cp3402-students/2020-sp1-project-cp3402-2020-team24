@@ -1,0 +1,12 @@
+#Ignore everything
+/*
+
+!public/
+public/*
+!public/wp-content
+!public/wp-content/*
+
+
+!.gitignore
+!README.md
+
