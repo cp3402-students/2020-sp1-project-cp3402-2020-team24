@@ -1,0 +1,14 @@
+/*Variables - Style that can be used for anything you like. In this case I made variables to transform the button 
+    which has changed the button colour and text colour*/
+
+$textColour: rgb(0, 0, 0);
+@mixin flex($direction, $background) {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*Direction of property*/
+    flex-direction: $direction;
+    /*Background colour*/
+    background: $background;
+}
