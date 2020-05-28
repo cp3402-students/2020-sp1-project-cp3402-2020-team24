@@ -147,7 +147,7 @@ function jazz_club_scripts()
     wp_style_add_data('jazz-club-style', 'rtl', 'replace');
 
 
-    wp_enqueue_script('jazz-club-skip-link-focus-fix', get_template_directory_uri() . '/dist/js/skip-link-focus-fix.js', array(), _S_VERSION, true);
+    wp_enqueue_script('jazz-club-skip-link-focus-fix', get_template_directory_uri() . 'src/js/skip-link-focus-fix.js', array(), _S_VERSION, true);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
