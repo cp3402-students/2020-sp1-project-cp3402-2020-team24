@@ -135,15 +135,15 @@ add_action('after_setup_theme', 'jazz_club_content_width', 0);
  */
 function jazz_club_scripts()
 {
-    wp_enqueue_style('jazz-club-bs-css', get_template_directory_url() . '/dist/css/bootstrap.min.css');
-    wp_enqueue_style('jazz-club-fontawesome', get_template_directory_url() . '/fonts/font-awesome/css/font-awesome.min.css');
+    wp_enqueue_style('jazz-club-bs-css', get_template_directory_uri() . '/dist/css/bootstrap.min.css');
+    wp_enqueue_style('jazz-club-fontawesome', get_template_directory_uri() . '/fonts/font-awesome/css/font-awesome.min.css');
     wp_enqueue_style('jazz-club-style', get_stylesheet_uri(), array(), _S_VERSION);
     wp_register_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.0/cjs/popper.min.js', false, '', true);
     wp_enqueue_script('popper');
-    wp_enqueue_script('jazz-club-tether', get_template_directory_url() . '/src/js/tether.min.js', array(), '20170115', true);
-    wp_enqueue_script('jazz-club-bootstrap', get_template_directory_url() . '/src/js/bootstrap.min.js', array('jquery'), '20170115', true);
-    wp_enqueue_script('jazz-club-bootstrap-hover', get_template_directory_url() . '/src/js/bootstrap-hover.js', array('jquery'), '20170115', true);
-    wp_enqueue_script('jazz-club-nav-scroll', get_template_directory_url() . '/src/js/nav-scroll.js', array('jquery'), '20170115', true);
+    wp_enqueue_script('jazz-club-tether', get_template_directory_uri() . '/src/js/tether.min.js', array(), '20170115', true);
+    wp_enqueue_script('jazz-club-bootstrap', get_template_directory_uri() . '/src/js/bootstrap.min.js', array('jquery'), '20170115', true);
+    wp_enqueue_script('jazz-club-bootstrap-hover', get_template_directory_uri() . '/src/js/bootstrap-hover.js', array('jquery'), '20170115', true);
+    wp_enqueue_script('jazz-club-nav-scroll', get_template_directory_uri() . '/src/js/nav-scroll.js', array('jquery'), '20170115', true);
     wp_style_add_data('jazz-club-style', 'rtl', 'replace');
 
 
