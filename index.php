@@ -12,8 +12,7 @@
  * @package jazz-club
  */
 
-get_header();
-?>
+get_header(); ?>
 
 	<div id="primary" class="content-area col-md-8">
         <main id="main" class="site-main">
@@ -30,8 +29,7 @@ get_header();
 			endif;
 
 			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			while ( have_posts() ) : the_post();
 
 				/*
 				 * Include the Post-Type-specific template for the content.
@@ -48,8 +46,7 @@ get_header();
 
 			get_template_part( 'template-parts/content', 'none' );
 
-		endif;
-		?>
+		endif; ?>
 
         </main>
 	</div><!-- #main --> 
@@ -57,4 +54,4 @@ get_header();
 <div class="col-md-4">
     <?php get_sidebar(); ?>
 </div>
-<?php get_footer(); ?>
+<?php get_footer();

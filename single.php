@@ -36,9 +36,7 @@ get_header();
 
 	</main><!-- #main -->
 
-<div class="col-md-4">
-	<?php get_sidebar(); ?>
+	<div class="col-md-4">
+    <?php get_sidebar(); ?>
 </div>
-get_sidebar();
-get_footer();
-
+<?php get_footer();

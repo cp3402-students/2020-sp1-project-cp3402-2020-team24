@@ -10,7 +10,7 @@
  */
 
 ?>
-
+	</div><!--#content -->
 	<footer id="colophon" class="site-footer row">
 		<div class="site-info col-md-12">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'jazz-club' ) ); ?>">
