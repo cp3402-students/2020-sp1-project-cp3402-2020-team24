@@ -9,6 +9,7 @@ Requires at least: 5.0
 Tested up to: 5.4.1
 Tags: music, jazz, club, organisation, team, feature-images
 License: GNU
+URL: http://34.106.62.108/
 
 == Description ==
 Jazz Club is designed to be to be a simple and easy to navigate website aimed at a more elderly audience. The theme is mainly for displaying events for a club and its bands however has been left modular so that it can be adapted for child themes.
