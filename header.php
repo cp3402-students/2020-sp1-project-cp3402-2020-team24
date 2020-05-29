@@ -1,74 +1,72 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package jazz-club
- */
+<!DOCTYPE html>
+<html lang="en">
 
-?>
-<!doctype html>
-<html <?php language_attributes(); ?>>
 <head>
-    <meta charset="<?php bloginfo('charset'); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="profile" href="https://gmpg.org/xfn/11">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Clean Blog</title>
 
     <?php wp_head(); ?>
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site container">
-    <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'jazz-club'); ?></a>
 
-    <header id="masthead" class="site-header">
-        <nav id="menu" class="navbar navbar-expand-md navbar-light" role="navigation">
-            <div class="site-branding navbar-brand">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="<?php echo get_home_url(); ?>">Start Bootstrap</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <?php
-                the_custom_logo();
-                if (is_front_page() && is_home()) :
-                    ?>
-                    <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"
-                                              rel="home"><?php bloginfo('name'); ?></a></h1>
-                <?php
-                else :
-                    ?>
-                    <p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"
-                                             rel="home"><?php bloginfo('name'); ?></a></p>
-                <?php
-                endif;
-                $jazz_club_description = get_bloginfo('description', 'display');
-                if ($jazz_club_description || is_customize_preview()) :
-                    ?>
-                    <p class="site-description"><?php echo $jazz_club_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-                        ?></p>
-                <?php endif; ?>
-            </div><!-- .site-branding -->
 
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                    data-target="#bs4navbar" aria-controls="bs4navbar" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <?php
-            wp_nav_menu([
-                'menu'      => 'primary',
-                'theme_location'    => 'primary',
-                'container'         => 'div',
-                'container_id'      => 'bs4navbar',
-                'container_class'   => 'collapase navbar-collapse',
-                'menu_id'           => 'main-menu',
-                'menu_class'        => 'navbar-nav ml-auto',
-                'depth'             => 2,
-                'fallback_cb'       => 'bs4navwalker::fallback',
-                'walker'            => new bs4navwalker()
-            ]);
-            ?>
-        </nav>
-    </header>
+                    $defaults = array(
+                        'container' => 'ul',
+                        'theme_location' => 'primary-menu',
+                        'menu_class' => 'nav navbar-nav navbar-right'
+                    );
 
+                    wp_nav_menu( $defaults );
+                ?>
 
-</div id="content" class="site-content row" ><!-- #masthead -->
+                <!-- <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="post.html">Sample Post</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul> -->
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>

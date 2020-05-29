@@ -1,41 +1,38 @@
-<?php
-/**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package jazz-club
- */
+<?php 
+get_header(); ?>
+<!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-get_header();
-?>
+        <?php $image = get_field('banner'); ?>
+        <header class="intro-header" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/jazz_image4.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="page-heading">
 
-<div id="primary" class="content-area col-md-8">
-	<main id="primary" class="site-main">
+                        <h1><?php the_title(); ?></h1>
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+                        <hr class="small">
+                        <span class="subheading"><?php the_field('sub_heading'); ?></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-			get_template_part( 'template-parts/content', 'page' );
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <?php the_content(); ?>
+            </div>
+        </div>
+    </div>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+    <?php endwhile; else: ?>
 
-		endwhile; // End of the loop.
-		?>
+        <p>Sorry, page not found.</p>
 
-	</main><!-- #main -->
-
-<div class="col-md-4">
-    <?php get_sidebar(); ?>
-</div>
-
+    <?php endif; ?>
 <?php get_footer(); ?>

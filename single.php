@@ -1,42 +1,33 @@
-<?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package jazz-club
- */
+<?php get_header(); ?>
+<!-- Page Header -->
 
-get_header();
-?>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <?php $image = get_field('banner'); ?>
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('<?php echo $image['url']; ?>')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1><?php the_title(); ?></h1>
+                        <h2 class="subheading"><?php the_field('sub_heading') ?></h2>
+                        <span class="meta">Posted by <?php the_author_posts_link(); ?> on <?php the_time('F j, Y'); ?></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-	<div id="primary" class="content-area col-md-8">
-	<main id="primary" class="site-main">
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <?php the_content(); ?>
+                </div>
+            </div>
+        </div>
+    </article>
+<?php endwhile; endif; ?>
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
-
-			get_template_part( 'template-parts/content', get_post_type() );
-
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'jazz-club' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'jazz-club' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-	</main><!-- #main -->
-
-	<div class="col-md-4">
-    <?php get_sidebar(); ?>
-</div>
-<?php get_footer();
+<?php get_footer(); ?>
