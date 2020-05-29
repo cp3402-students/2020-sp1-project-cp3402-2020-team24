@@ -110,7 +110,7 @@ function jazz_club_add_editor_style()
     add_editor_style('dist/css/editor-style.css');
 }
 
-add_action('admin_init', 'jazz_club_editor_style');
+add_action('admin_init', 'jazz_club_add_editor_style');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
