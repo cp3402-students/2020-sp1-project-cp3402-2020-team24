@@ -55,5 +55,3 @@ GNU General Public License for more details.
 
 == Resources ==
 * Underscores, © 2012-2019 Automattic, Inc., GNU GPL v2 or later
-
-Example changes
